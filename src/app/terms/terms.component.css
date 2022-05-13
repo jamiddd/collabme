@@ -1,0 +1,20 @@
+.terms-container {
+	display: block;
+	margin: auto;
+	max-width: 60vw;
+	min-height: 80vh;
+
+	padding: 80px 16px;
+}
+
+.icon {
+	transform: scale(0.8) translateY(30%);
+}
+
+.log {
+	border: 1px solid #DDDDDD;
+}
+
+.service-providers li a {
+	color: black;
+}

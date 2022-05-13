@@ -1,0 +1,31 @@
+.team-member {
+	display: inline-flex;
+	align-items: center;
+	padding: 20px;
+}
+
+.team-member-image {
+	border-radius: 50px;
+	width: 100px;
+	height: 100px;
+}
+
+.member-info {
+	padding: 12px;
+}
+
+.team-member-name {
+	font-size: large;
+	color: black;
+	font-weight: bold;
+	margin: 6px 0;
+	display: block;
+	line-height: 1;
+}
+
+.team-member-position {
+	font-size: large;
+	color: dodgerblue;
+	display: block;
+	line-height: 1;
+}

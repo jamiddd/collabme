@@ -1,0 +1,18 @@
+.job-container {
+	display: block;
+	margin: 60px 15vw;
+	min-height: 80vh;
+}
+
+.job-container h1 {
+	font-family: "Koulen", sans-serif;
+	margin: 0;
+}
+
+.job-container h3 {
+	color: #999999;
+}
+
+.log {
+	border: 1px solid #DDDDDD;
+}

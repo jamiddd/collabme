@@ -1,0 +1,38 @@
+<nav class="navbar center-align-navbar" *ngIf="navigation" [class.mat-elevation-z2]="true">
+	<span class="nav-spacer"></span>
+	<div class="nav-center">
+		<div class="nav-center-brand">
+			<img class="nav-logo" src="{{navigation.logo}}" alt="CollabMe Logo">
+			<a href="{{navigation.home}}" class="nav-logo-text"><span>{{navigation.title}}</span></a>
+		</div>
+		<span class="nav-spacer"></span>
+		<div class="nav-center-navigations">
+			<ul class="navigation-items" >
+				<ng-container *ngFor="let item of navigation.items; let i = index">
+					<a class="nav-item" mat-button href="{{navigation.routes[i]}}">{{item}}</a>
+				</ng-container>
+				<a href="https://play.google.com/store/apps/details?id=com.jamid.codesquare&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="nav-download-btn" mat-stroked-button color="primary">Download<span class="material-symbols-rounded">download</span></a>
+			</ul>
+		</div>
+	</div>
+	<span class="nav-spacer"></span>
+</nav>
+<!--<nav class="navbar" *ngIf="navigation && navigation.isMinimized" [class.mat-elevation-z2]="true">
+	<a class="mobile-nav-logo" href="{{navigation.home}}"><img  src="{{navigation.logo}}" alt="CollabMe Logo"></a>
+	<span class="nav-spacer"></span>
+	<button class="nav-download-btn" mat-stroked-button [matMenuTriggerFor]="menu" color="primary">Download APK <span class="material-symbols-rounded">download</span></button>
+	&lt;!&ndash;<button class="mobile-nav-option"  mat-icon-button (click)="openMenu()" aria-label="Example icon button with a menu icon">
+		<mat-icon>menu</mat-icon>
+	</button>&ndash;&gt;
+</nav>-->
+<mat-menu #menu="matMenu" xPosition="after" yPosition="below" overlapTrigger="false">
+	<button mat-menu-item>
+		<span>Features</span>
+	</button>
+	<button mat-menu-item>
+		<span>About</span>
+	</button>
+	<button mat-menu-item>
+		<span>Contact</span>
+	</button>
+</mat-menu>

@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+
+html, body { height: 100%; scroll-behavior: smooth; }
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-root {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.material-symbols-rounded {
+	transform: scale(0.9) translateY(-5%);
+	font-variation-settings:
+		'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 48;
+}
+
+a, button {
+	font-weight: 600 !important;
+	font-family: "Manrope", sans-serif !important;
+}

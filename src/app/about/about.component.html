@@ -1,0 +1,36 @@
+<div class="about-container">
+	<div class="about-spacer"></div>
+	<div class="about-content " [class.mat-elevation-z2]="true">
+		<div class="about-card ">
+			<h2>CollabMe</h2>
+			<p class="about-desc company-description">Welcome to CollabMe!
+				CollabMe is a social app that allows you to find new connections,
+				whether you’re looking out for people to collaborate on work posts
+				or to expand your professional network. It is a social approach to
+				finding thousands of people on the other side of the internet to
+				join together and learn new things along the way; be it professional
+				work or fun and creative posts.
+			</p>
+
+			<div class="about-team">
+				<div class="team-description-container">
+					<h2>Our team</h2>
+					<p class="about-desc">CollabMe is a social app that allows you to find new connections,
+						whether you’re looking out for people to collaborate on work posts
+						or to expand your professional network.</p>
+				</div>
+				<div class="team-members-container">
+					<ng-container *ngFor="let m of teamMembers">
+						<app-team-member [teamMember]="m"></app-team-member>
+					</ng-container>
+				</div>
+			</div>
+
+			<!--<mat-card-actions>
+				<button mat-button>LIKE</button>
+				<button mat-button>SHARE</button>
+			</mat-card-actions>-->
+		</div>
+	</div>
+	<div class="about-spacer"></div>
+</div>

@@ -1,0 +1,51 @@
+
+.log {
+	border: 1px solid #CCCCCC;
+}
+
+.content {
+	flex: 1 0 auto;
+	padding-top: 56px;
+}
+
+footer {
+	background: #F1F1F1;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.footer-spacer {
+	flex: 1;
+}
+
+.footer-center-content {
+	flex: 2;
+	padding: 2em;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	justify-content: center;
+}
+
+.footer-center-content a {
+	text-decoration: none;
+	padding: 8px 16px;
+	color: #999999;
+}
+
+.copyright {
+	width: 100%;
+	background: #F1F1F1;
+}
+
+.copyright-text {
+	color: #999999;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	margin: 0;
+}

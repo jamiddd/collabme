@@ -1,0 +1,25 @@
+.privacy-container {
+	display: block;
+	margin: auto;
+	max-width: 60vw;
+	min-height: 80vh;
+
+	padding: 80px 16px;
+}
+
+.icon {
+	transform: scale(0.8) translateY(30%);
+}
+
+.privacy-container h2 {
+	margin-top: 30px;
+}
+
+.service-providers li a {
+	color: black;
+}
+
+.log {
+	border: 1px solid #DDDDDD;
+}
+

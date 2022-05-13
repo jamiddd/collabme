@@ -1,0 +1,127 @@
+.log {
+	border: 1px solid #CCCCCC;
+}
+
+/** {*/
+/*	border: 1px solid red;*/
+/*}*/
+
+section {
+	display: block;
+	min-height: 100px;
+	padding:  56px 10vw;
+}
+
+.features {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+#cover {
+	background-size: cover;
+	background: url("../../assets/cover-bg.jpg") no-repeat;
+}
+
+.cover-content {
+	min-height: 70vh;
+
+	/* for child elements*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.cover-spacer {
+	flex: 1;
+}
+
+.cover-content-text {
+	padding: 1vw;
+}
+
+.cover-content-media {
+	flex: 1;
+}
+
+.cover-text {
+	font-size: xxx-large;
+	font-family: "Koulen", sans-serif;
+	line-height: 1;
+}
+
+.cover-text-focused {
+	color: dodgerblue;
+}
+
+.cover-img {
+	max-width: 100%;
+	filter: drop-shadow(10px 10px 4px #CCCCCC);
+}
+
+.cover-text-secondary {
+	font-size: large;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.play-store {
+	max-width: 240px;
+}
+
+#about-section {
+	display: block;
+	padding: 50px 10vw;
+	background: white;
+}
+
+#about-section h1 {
+	font-family: "Koulen", sans-serif;
+	font-size: xxx-large;
+}
+
+#about-section h2 {
+	font-family: "Koulen", sans-serif;
+	font-size: xx-large;
+}
+
+.about-card {
+	padding: 1vw;
+}
+
+.about-team {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.company-description {
+	margin: 16px 0 70px 0;
+}
+
+.our-team-header {
+	font-size: xx-large;
+	font-family: "Montserrat SemiBold", sans-serif;
+}
+
+.about-desc {
+	font-size: large;
+}
+
+.team-description-container {
+	flex: 1;
+}
+
+.team-members-container {
+	padding: 0 12px;
+	flex: 2;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.team-member {
+	flex: 1;
+}

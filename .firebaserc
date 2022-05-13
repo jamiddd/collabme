@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "codesqaure": {
+      "hosting": {
+        "collabme": [
+          "collabme"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "codesqaure"
+  }
+}

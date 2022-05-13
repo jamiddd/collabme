@@ -1,0 +1,42 @@
+.log {
+	border: 1px solid #CCCCCC;
+}
+
+.feature-showcase {
+	flex: 1;
+	padding: 5%;
+	max-width: 600px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.feature-media {
+	flex: 1;
+	padding: 40px;
+}
+
+.feature-info {
+	height: inherit;
+	flex: 1;
+	padding: 30px;
+}
+
+.feature-header {
+	font-size: xx-large;
+	font-family: "Koulen", sans-serif;
+}
+
+.feature-info-container {
+
+}
+
+.feature-description {
+	font-size: large;
+}
+
+.feature-image {
+	filter: drop-shadow(10px 10px 4px #eeeeee);
+	width: 300px;
+}

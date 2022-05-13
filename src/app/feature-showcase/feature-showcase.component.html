@@ -1,0 +1,18 @@
+<div class="feature-showcase" *ngIf="feature && feature.contentLeft">
+	<div class="feature-media">
+		<img class="feature-image" src="{{feature.image}}" alt="Chat Image">
+	</div>
+	<div class="feature-info">
+		<h1 class="feature-header">{{ feature.heading }}</h1>
+		<p class="feature-description">{{ feature.content }}</p>
+	</div>
+</div>
+<div class="feature-showcase" *ngIf="feature && !feature.contentLeft">
+	<div class="feature-info">
+		<h1 class="feature-header">{{ feature.heading }}</h1>
+		<p class="feature-description">{{ feature.content }}</p>
+	</div>
+	<div class="feature-media">
+		<img class="feature-image" src="{{feature.image}}" alt="Chat Image">
+	</div>
+</div>

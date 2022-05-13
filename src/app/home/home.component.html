@@ -1,0 +1,52 @@
+<section id="cover">
+	<div class="cover-content">
+		<div class="cover-content-text">
+			<h1 class="cover-text">
+				Create<br>and<br><span class="cover-text-focused">Collaborate</span>
+			</h1>
+			<p class="cover-text-secondary">Find awesome projects to work with, Build resume, join competitions and much more. Connecting people.</p>
+			<a href='https://play.google.com/store/apps/details?id=com.jamid.codesquare&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="play-store"  alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+		</div>
+		<div class="cover-content-media">
+			<img class="cover-img" src="/assets/phone3.png" alt="Phone image"/>
+		</div>
+	</div>
+</section>
+
+<mat-divider></mat-divider>
+
+<section class="features" id="feature">
+	<ng-container *ngFor="let f of features;">
+		<app-feature-showcase [feature]="f"></app-feature-showcase>
+	</ng-container>
+</section>
+
+<mat-divider></mat-divider>
+
+<section id="about-section">
+	<div class="about-card ">
+		<h2>CollabMe</h2>
+		<p class="about-desc company-description">Welcome to CollabMe!
+			CollabMe is a social app that allows you to find new connections,
+			whether you’re looking out for people to collaborate on work posts
+			or to expand your professional network. It is a social approach to
+			finding thousands of people on the other side of the internet to
+			join together and learn new things along the way; be it professional
+			work or fun and creative posts.
+		</p>
+
+		<div class="about-team">
+			<div class="team-description-container">
+				<h2>Our team</h2>
+				<p class="about-desc">CollabMe is a social app that allows you to find new connections,
+					whether you’re looking out for people to collaborate on work posts
+					or to expand your professional network.</p>
+			</div>
+			<div class="team-members-container">
+				<ng-container *ngFor="let m of teamMembers">
+					<app-team-member [teamMember]="m"></app-team-member>
+				</ng-container>
+			</div>
+		</div>
+	</div>
+</section>

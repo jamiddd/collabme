@@ -1,0 +1,23 @@
+<div>
+	<div class="career-container">
+		<div class="career-cover"></div>
+		<div class="header-container">
+			<h1 class="header">Join our awesome group</h1>
+		</div>
+	</div>
+
+	<div class="jobs-container">
+		<h1 style="font-family: 'Roboto Condensed', sans-serif">{{(jobs|async)?.length}} Jobs</h1>
+
+		<ng-container *ngFor="let j of jobs | async">
+			<a [routerLink]="['/career/', j.id]" class="job-item">
+				<div class="job-item-desc">
+					<h1>{{j.name}}</h1>
+					<p style="color: #999999">{{j.location}}, {{j.duration}}</p>
+				</div>
+				<button [routerLink]="['/career/', j.id]"  class="job-item-action" mat-stroked-button color="primary">Apply<mat-icon>arrow_forward</mat-icon></button>
+			</a>
+		</ng-container>
+	</div>
+
+</div>
