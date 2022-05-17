@@ -9,11 +9,12 @@ import {Feature} from "../data/Feature";
 export class FeatureShowcaseComponent implements OnInit {
 
 	@Input() feature?: Feature
+	@Input() currentScreenSize?: string
 
 	constructor() { }
 
 	ngOnInit(): void {
-
+		console.log(this.currentScreenSize)
 	}
 
 }

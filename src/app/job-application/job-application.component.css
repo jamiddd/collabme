@@ -1,9 +1,52 @@
 .job-application-container {
 	display: block;
-	margin: 60px 15vw;
-	min-height: 80vh;
+}
+
+.job-form-container {
+	display: block;
+	margin: auto;
 }
 
 .log {
 	border: 1px solid #999999;
+}
+
+.fields-container {
+
+}
+
+.final-msg {
+	border-radius: 12px;
+	background: rgba(157, 255, 182, 0.24);
+	color: rgb(16, 105, 41);;
+	padding: 16px;
+}
+
+.job-action-container {
+	padding: 40px 12px;
+}
+
+.upload-message-container {
+	margin: 24px;
+	display: none;
+
+	border-radius: 24px;
+	background: rgba(0,109,28,0.33);
+}
+
+.prev-step {
+	float: left;
+}
+
+.next-step {
+	float: right;
+}
+
+.field {
+	display: block;
+	margin: 8px;
+}
+
+.file-upload-button {
+	margin: 0 24px;
 }

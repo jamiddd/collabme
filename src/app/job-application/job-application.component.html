@@ -1,40 +1,107 @@
-<div class="job-application-container">
-	<ng-container *ngIf="firstFormGroup && secondFormGroup">
-		<mat-stepper linear #stepper>
-			<mat-step [stepControl]="firstFormGroup">
-				<form [formGroup]="firstFormGroup">
-					<ng-template matStepLabel>Personal Details</ng-template>
-					<mat-form-field appearance="fill">
-						<mat-label>Name</mat-label>
-						<input matInput formControlName="firstCtrl" placeholder="Last name, First name" required>
-					</mat-form-field>
-					<div>
-						<button mat-button matStepperNext>Next</button>
-					</div>
-				</form>
-			</mat-step>
-			<mat-step [stepControl]="secondFormGroup">
-				<form [formGroup]="secondFormGroup">
-					<ng-template matStepLabel>Experience & skills</ng-template>
-					<mat-form-field appearance="fill">
-						<mat-label>Address</mat-label>
-						<input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-							   required>
-					</mat-form-field>
-					<div>
-						<button mat-button matStepperPrevious>Back</button>
-						<button mat-button matStepperNext>Next</button>
-					</div>
-				</form>
-			</mat-step>
-			<mat-step>
-				<ng-template matStepLabel>Done</ng-template>
-				<p>You are now done.</p>
-				<div>
-					<button mat-button matStepperPrevious>Back</button>
-					<button mat-button (click)="stepper.reset()">Reset</button>
-				</div>
-			</mat-step>
-		</mat-stepper>
-	</ng-container>
+<div class="job-application-container row" [style.padding-top]="topPaddingText">
+	<div class="col-3 empty-col"></div>
+	<div class="job-form-container col-6">
+		<ng-container *ngIf="firstFormGroup && secondFormGroup">
+			<mat-stepper linear #stepper>
+				<mat-step [stepControl]="firstFormGroup">
+
+					<!-- personal details -->
+					<form [formGroup]="firstFormGroup">
+						<ng-template matStepLabel>Personal Details</ng-template>
+
+						<div class="fields-container">
+							<mat-form-field class="field" appearance="fill">
+								<mat-label>Name</mat-label>
+								<input matInput type="text" formControlName="name" placeholder="Write your name .. " required>
+								<mat-error *ngIf="firstFormGroup.get('name')?.hasError('required')">Name cannot be empty</mat-error>
+								<mat-error *ngIf="firstFormGroup.get('name')?.hasError('minlength')">Cannot be less than 4 letters</mat-error>
+								<mat-error *ngIf="firstFormGroup.get('name')?.hasError('maxlength')">Cannot be more than 30 letters</mat-error>
+							</mat-form-field>
+
+							<mat-form-field class="field" appearance="fill">
+								<mat-label>Email</mat-label>
+								<input matInput type="email" formControlName="email" placeholder="Write your email .. " required>
+								<mat-error *ngIf="firstFormGroup.get('email')?.hasError('required')">Email cannot be empty</mat-error>
+								<mat-error *ngIf="firstFormGroup.get('email')?.hasError('email')">Must provide a valid email</mat-error>
+							</mat-form-field>
+
+							<mat-form-field class="field" appearance="fill">
+								<mat-label>Phone</mat-label>
+								<input matInput type="text" maxlength="10" formControlName="phone" placeholder="Write your phone no .. " required>
+								<mat-error *ngIf="firstFormGroup.get('phone')?.hasError('required')">Phone number cannot be empty</mat-error>
+								<mat-error *ngIf="firstFormGroup.get('phone')?.hasError('pattern')">Enter a proper phone number</mat-error>
+							</mat-form-field>
+
+							<mat-form-field class="field" appearance="fill">
+								<mat-label>Location</mat-label>
+								<input matInput type="text" formControlName="address" placeholder="Write your location .. " required>
+								<mat-error *ngIf="firstFormGroup.get('address')?.hasError('required')">Location cannot be empty</mat-error>
+								<mat-error *ngIf="firstFormGroup.get('address')?.hasError('maxlength')">Location cannot be more than 100 letters long</mat-error>
+							</mat-form-field>
+						</div>
+
+
+						<div class="job-action-container">
+							<button class="next-step" mat-stroked-button color="primary" matStepperNext>Next</button>
+						</div>
+
+					</form>
+
+				</mat-step>
+				<mat-step [stepControl]="secondFormGroup">
+
+					<form [formGroup]="secondFormGroup">
+						<ng-template matStepLabel>Experience & skills</ng-template>
+
+						<div class="fields-container">
+							<mat-form-field class="field" appearance="fill">
+								<mat-label>School Name</mat-label>
+								<input matInput formControlName="school" placeholder="Ex: Bishop Cottons Boys School" required>
+								<mat-error *ngIf="secondFormGroup.get('school')?.hasError('required')">Enter your last school</mat-error>
+								<mat-error *ngIf="secondFormGroup.get('school')?.hasError('maxlength')">The name of the school cannot exceed 100 letters</mat-error>
+							</mat-form-field>
+							<mat-form-field class="field" appearance="fill">
+								<mat-label>Percentage</mat-label>
+								<input matInput formControlName="schoolScore" placeholder="Ex: 99.75" required>
+								<mat-error *ngIf="secondFormGroup.get('schoolScore')?.hasError('required')">Enter your 12th result</mat-error>
+								<mat-error *ngIf="secondFormGroup.get('schoolScore')?.hasError('pattern')">Enter valid numbers only</mat-error>
+								<mat-hint align="start">Write your school marks upto 2 decimal. Ex. 98.00</mat-hint>
+							</mat-form-field>
+							<br>
+							<mat-divider></mat-divider>
+							<br>
+							<mat-form-field class="field" appearance="fill">
+								<mat-label>College</mat-label>
+								<input matInput formControlName="college" placeholder="Ex: Bishop Cottons Boys School" required>
+								<mat-error *ngIf="secondFormGroup.get('college')?.hasError('required')">Enter your last college</mat-error>
+								<mat-error *ngIf="secondFormGroup.get('college')?.hasError('pattern')">The name of the college cannot exceed 100 letters</mat-error>
+							</mat-form-field>
+
+							<mat-form-field style="margin-bottom: 24px;" class="field" appearance="fill">
+								<mat-label>Percentage</mat-label>
+								<input matInput formControlName="collegeScore" placeholder="Ex: 97.25" required>
+								<mat-error *ngIf="secondFormGroup.get('collegeScore')?.hasError('required')">Enter your degree result</mat-error>
+								<mat-error *ngIf="secondFormGroup.get('collegeScore')?.hasError('pattern')">Enter valid numbers only</mat-error>
+								<mat-hint align="start">Write your college marks upto 2 decimal. Ex. 98.00</mat-hint>
+							</mat-form-field>
+
+							<app-file-upload (fileUrl)="onFileUploaded($event)"></app-file-upload>
+						</div>
+
+						<div class="job-action-container">
+							<button class="prev-step" mat-stroked-button color="primary" matStepperPrevious>Back</button>
+							<button class="next-step" [disabled]="!resumeUploaded || !secondFormGroup.valid" mat-stroked-button (click)="uploadJobApplication()" color="primary" matStepperNext>Submit</button>
+						</div>
+					</form>
+				</mat-step>
+				<mat-step>
+					<ng-template matStepLabel>Done</ng-template>
+					<p class="final-msg">Thank you for applying for job in our company. We'll contact and let you know about your application status through the provided contact methods.</p>
+					<p>{{redirectText}}</p>
+					<a routerLink="/" mat-stroked-button (click)="killTimer()"><span class="material-symbols-rounded icon-left">arrow_backward</span>Go Home</a>
+				</mat-step>
+			</mat-stepper>
+		</ng-container>
+	</div>
+	<div class="col-3 empty-col"></div>
 </div>

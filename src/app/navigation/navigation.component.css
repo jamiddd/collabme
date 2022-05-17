@@ -1,19 +1,30 @@
 .navbar {
-	display: flex;
-	flex-direction: row;
 	position: fixed;
-	top: 0;
-	z-index: 999;
+	top:0;
+
 	min-height: 56px;
-	width: 100vw;
+	z-index: 999;
 	background: white;
-	align-items: center;
+
+	display: flex;
+	flex-direction: column;
+}
+
+#banner-notification {
+	background: #c8dcef;
+	text-align: center;
+	color: #000000;
+	font-family: "Manrope", sans-serif;
+	display: block;
+	margin: 0;
+	padding: 4px 12px;
+}
+
+.center-contained {
+	padding: 0 10vw;
 }
 
 .nav-center {
-	flex: 6;
-	height: inherit;
-
 	/* for child elements*/
 	display: flex;
 	flex-direction: row;
@@ -23,6 +34,7 @@
 .navigation-items {
 	display: flex;
 	flex-direction: row-reverse;
+	margin: 0;
 }
 
 .nav-download-btn {
@@ -31,6 +43,7 @@
 }
 
 .nav-center-brand {
+	padding: 0 12px;
 	display: inline-flex;
 	align-items: center;
 }
@@ -44,9 +57,6 @@
 	height: inherit;
 }
 
-.center-align-navbar {
-
-}
 
 .nav-logo {
 	/*transform: translateY(10%);*/
@@ -65,7 +75,7 @@
 }
 
 .nav-logo-text {
-	font-size: x-large;
+	font-size: large;
 	font-family: "Manrope", sans-serif;
 	font-weight: 700;
 	padding: 8px;

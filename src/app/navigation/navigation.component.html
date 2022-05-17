@@ -1,0 +1,18 @@
+<div #primaryToolbar class="navbar col-12" *ngIf="navigation" [class.mat-elevation-z2]="true" style="padding: 0;">
+	<p id="banner-notification" *ngIf="navigation.notification">{{navigation.notification}}</p>
+	<div class="nav-center" [class.center-contained]="navigation.screenSize != 'XSmall'">
+		<div class="nav-center-brand">
+			<img class="nav-logo" src="{{navigation.logo}}" alt="CollabMe Logo">
+			<a href="{{navigation.home}}" class="nav-logo-text"><span>{{navigation.title}}</span></a>
+		</div>
+		<span class="nav-spacer"></span>
+		<div class="nav-center-navigations">
+			<ul class="navigation-items" >
+				<ng-container *ngFor="let item of navigation.items; let i = index">
+					<a class="nav-item" mat-button href="{{navigation.routes[i]}}">{{item}}</a>
+				</ng-container>
+				<a href="https://play.google.com/store/apps/details?id=com.jamid.codesquare&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="nav-download-btn" mat-stroked-button color="primary">Download<span class="material-symbols-rounded icon-right">download</span></a>
+			</ul>
+		</div>
+	</div>
+</div>

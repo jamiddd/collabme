@@ -1,42 +1,46 @@
 <ng-container *ngIf="(job | async) as j">
-	<div class="job-container" *ngIf="j">
-		<div class="job-header">
-			<h1>{{j.name}}</h1>
-			<h3>{{j.location}}, {{j.duration}}</h3>
+	<div class="job-container row" [style.padding-top]="topPaddingText" *ngIf="j">
+		<div class="col-2 empty-col"></div>
+		<div class="col-8">
+
+			<div class="job-header">
+				<h1>{{j.name}}</h1>
+				<h3>{{j.location}}, {{j.duration}}</h3>
+			</div>
+
+			<mat-divider></mat-divider>
+
+			<p style="margin-top: 40px">
+				{{j.description}}
+			</p>
+
+			<div>
+				<h2>Responsibilities</h2>
+				<ol>
+					<li *ngFor="let r of j.responsibilities">{{r}}</li>
+				</ol>
+			</div>
+
+			<div>
+				<h2>Minimum Qualifications</h2>
+				<ol>
+					<li *ngFor="let mq of j.minQualifications">{{mq}}</li>
+				</ol>
+			</div>
+
+
+			<div>
+				<h2>Preferred Qualifications</h2>
+				<ol>
+					<li *ngFor="let rq of j.prefQualifications">{{rq}}</li>
+				</ol>
+			</div>
+
+			<button [routerLink]="['/career/' + j.id + '/apply']" mat-stroked-button color="primary" style="border-radius: 24px; min-width: 120px; display: block; margin: 100px auto;">Apply <span class="material-symbols-rounded icon-right">arrow_forward</span></button>
+
+			<mat-divider></mat-divider>
 		</div>
-
-		<mat-divider></mat-divider>
-
-		<p style="margin-top: 40px">
-			{{j.description}}
-		</p>
-
-		<div>
-			<h2>Responsibilities</h2>
-			<ol>
-				<li *ngFor="let r of j.responsibilities">{{r}}</li>
-			</ol>
-		</div>
-
-		<div>
-			<h2>Minimum Qualifications</h2>
-			<ol>
-				<li *ngFor="let mq of j.minQualifications">{{mq}}</li>
-			</ol>
-		</div>
-
-
-		<div>
-			<h2>Preferred Qualifications</h2>
-			<ol>
-				<li *ngFor="let rq of j.prefQualifications">{{rq}}</li>
-			</ol>
-		</div>
-
-		<button [routerLink]="['/career/' + j.id + '/apply']" mat-stroked-button color="primary" style="border-radius: 24px; min-width: 120px; display: block; margin: 100px auto;">Apply <span class="material-symbols-rounded">arrow_forward</span></button>
-
-		<mat-divider></mat-divider>
-
+		<div class="col-2 empty-col"></div>
 	</div>
 </ng-container>
 

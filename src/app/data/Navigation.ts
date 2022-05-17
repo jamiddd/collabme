@@ -4,5 +4,6 @@ export interface Navigation {
 	home: string;
 	items: string[];
 	routes: string[];
-	isMinimized: boolean;
+	screenSize?: string;
+	notification?: string;
 }

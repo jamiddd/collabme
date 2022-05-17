@@ -1,12 +1,14 @@
 .job-container {
 	display: block;
-	margin: 60px 15vw;
-	min-height: 80vh;
 }
 
 .job-container h1 {
-	font-family: "Koulen", sans-serif;
+	font-family: "Manrope", sans-serif;
 	margin: 0;
+}
+
+.job-container h2 {
+	font-family: "Manrope", sans-serif;
 }
 
 .job-container h3 {

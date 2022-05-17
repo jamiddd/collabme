@@ -1,54 +1,29 @@
-.blogs-container {
+.blogs-page-container {
 	display: block;
-	min-height: 80vh;
-	padding: 56px 10vw;
+}
+
+.blogs-container {
+
+}
+
+#featured-blogs-header {
+	margin: 40px 0;
 }
 
 .blogs-container h1 {
-	padding: 0 24px;
-	font-size: xx-large;
-	font-family: "Koulen", sans-serif;
-}
-
-.log {
-	border: 1px solid grey;
-}
-
-.featured-blogs section {
+	font-family: "Manrope", sans-serif;
 	display: block;
+	text-align: center;
 }
 
-.example-header-image {
-	background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-	background-size: cover;
-}
+/** {
+	border: 1px solid red;
+}*/
 
-.featured-blogs-container {
+.featured-blogs {
 	display: flex;
-	width: 100%;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.logs-container {
-	display: flex;
-	width: 100%;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-.example-card {
-	flex: 1;
-	margin: 12px;
-	min-width: 270px;
-}
-
-#logs {
-	margin-top: 100px;
-}
-
-.log-card {
-	flex: 1;
-	min-width: 200px;
-	margin: 12px;
-}

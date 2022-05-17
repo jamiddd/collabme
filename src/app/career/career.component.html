@@ -1,23 +1,48 @@
-<div>
-	<div class="career-container">
-		<div class="career-cover"></div>
-		<div class="header-container">
-			<h1 class="header">Join our awesome group</h1>
+<div class="career-container row" [style.padding-top]="topPaddingText">
+
+	<div class="career-cover col-12">
+		<img class="company-image" src="assets/company-careers.jpg" alt="Company image" />
+		<div class="company-image-overlay centered-element"></div>
+
+		<div class="career-cover-text centered-element">
+			<h1 class="career-heading">Creating and collaborating is what we believe</h1>
+			<h3 class="career-subheading">"Let's do it together"</h3>
 		</div>
 	</div>
 
-	<div class="jobs-container">
-		<h1 style="font-family: 'Roboto Condensed', sans-serif">{{(jobs|async)?.length}} Jobs</h1>
+	<div class="col-1 empty-col"></div>
 
-		<ng-container *ngFor="let j of jobs | async">
-			<a [routerLink]="['/career/', j.id]" class="job-item">
-				<div class="job-item-desc">
-					<h1>{{j.name}}</h1>
-					<p style="color: #999999">{{j.location}}, {{j.duration}}</p>
-				</div>
-				<button [routerLink]="['/career/', j.id]"  class="job-item-action" mat-stroked-button color="primary">Apply<mat-icon>arrow_forward</mat-icon></button>
-			</a>
-		</ng-container>
+	<div class="jobs-container col-10">
+		<div class="job-container-loading" *ngIf="isLoading">
+			<mat-spinner mode="indeterminate" diameter="30" color="primary"></mat-spinner>
+			<h2>Loading current openings</h2>
+		</div>
+
+		<div class="jobs-holder" *ngIf="jobs | async as jobs">
+			<h1 class="current-opening-header">Current Openings: ({{jobs.length}})</h1>
+
+			<div class="jobs-list">
+				<ng-container *ngFor="let j of jobs">
+					<mat-card class="job-card" [class.mat-elevation-z2]="true" matRipple
+							  [matRippleCentered]="true" (click)="navigateToJob(j.id)">
+						<mat-card-header>
+							<mat-card-title>{{j.name}}</mat-card-title>
+							<mat-card-subtitle>{{j.location}}, {{j.duration}}</mat-card-subtitle>
+						</mat-card-header>
+						<img class="card-image" mat-card-image src="{{j.image}}" alt="Photo of a Shiba Inu">
+						<mat-card-content><p class="job-desc">{{j.description}}</p></mat-card-content>
+
+						<mat-card-footer style="padding: 0 24px">
+							<mat-card-actions class="job-action-container">
+								<a (click)="navigateToJob(j.id)" mat-stroked-button>Check description<span class="material-symbols-rounded icon-right">arrow_forward</span></a>
+							</mat-card-actions>
+						</mat-card-footer>
+					</mat-card>
+				</ng-container>
+			</div>
+		</div>
 	</div>
+
+	<div class="col-1 empty-col"></div>
 
 </div>

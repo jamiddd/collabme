@@ -8,4 +8,5 @@ export interface Job {
 	minQualifications: string[];
 	prefQualifications: string[];
 	image?: string;
+	createdAt: Date;
 }

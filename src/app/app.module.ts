@@ -7,7 +7,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from '@angular/material/divider';
 import {FeatureShowcaseComponent} from './feature-showcase/feature-showcase.component';
-import {NavigationComponentComponent} from './navigation-component/navigation-component.component';
+import {NavigationComponent} from './navigation/navigation.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
@@ -32,15 +32,35 @@ import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {provideFunctions, getFunctions} from '@angular/fire/functions';
 import {provideMessaging, getMessaging} from '@angular/fire/messaging';
 import {provideStorage, getStorage} from '@angular/fire/storage';
-import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireModule} from "@angular/fire/compat";
 import {MatStepperModule} from "@angular/material/stepper";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import { BlogsComponent } from './blogs/blogs.component';
+import {BlogsComponent} from './blogs/blogs.component';
+import {DropZoneDirective} from './drop-zone.directive';
+import {FileUploadComponent} from './file-upload/file-upload.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {HelpComponent} from './help/help.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {MatRippleModule} from "@angular/material/core";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {UiStateService} from "./ui-state.service";
+import {HelpFeaturesComponent} from './help-features/help-features.component';
+import { HelpHomeComponent } from './help-home/help-home.component';
+import { FaqShortComponent } from './faq-short/faq-short.component';
+import {MatTreeModule} from "@angular/material/tree";
+import { HelpFaqsComponent } from './help-faqs/help-faqs.component';
+import { BlogCardComponent } from './blog-card/blog-card.component';
+import { MaterialElevationDirectiveDirective } from './material-elevation-directive.directive';
+import { AdminComponent } from './admin/admin.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminAuthenticationComponent } from './admin-authentication/admin-authentication.component';
 
 const routes: Routes = [
+	{path: "admin", component: AdminComponent, loadChildren: () => import('./admin-routing.module').then((m) => m.AdminRoutingModule)},
+	{path: "help", component: HelpComponent, loadChildren: () => import('./help-routing.module').then((m) => m.HelpRoutingModule)},
 	{path: "blogs", component: BlogsComponent},
 	{path: "career", component: CareerComponent},
 	{path: "career/:id", component: JobComponent},
@@ -50,13 +70,14 @@ const routes: Routes = [
 	{path: "about", component: AboutComponent},
 	{path: "home", component: HomeComponent},
 	{path: "", redirectTo: "/home", pathMatch: "full"},
+	{path: '**', component: PageNotFoundComponent}
 ]
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		FeatureShowcaseComponent,
-		NavigationComponentComponent,
+		NavigationComponent,
 		HomeComponent,
 		AboutComponent,
 		TeamMemberComponent,
@@ -65,7 +86,20 @@ const routes: Routes = [
 		CareerComponent,
 		JobComponent,
 		JobApplicationComponent,
-  BlogsComponent
+		BlogsComponent,
+		DropZoneDirective,
+		FileUploadComponent,
+		HelpComponent,
+		PageNotFoundComponent,
+		HelpFeaturesComponent,
+  HelpHomeComponent,
+  FaqShortComponent,
+  HelpFaqsComponent,
+  BlogCardComponent,
+  MaterialElevationDirectiveDirective,
+  AdminComponent,
+  AdminDashboardComponent,
+  AdminAuthenticationComponent
 	],
 	imports: [
 		BrowserModule,
@@ -93,10 +127,15 @@ const routes: Routes = [
 		MatStepperModule,
 		ReactiveFormsModule,
 		MatFormFieldModule,
-		MatInputModule
+		MatInputModule,
+		MatProgressSpinnerModule,
+		MatRippleModule,
+		MatSidenavModule,
+		MatListModule,
+		MatTreeModule
 	],
 	providers: [
-		ScreenTrackingService, UserTrackingService
+		ScreenTrackingService, UserTrackingService, UiStateService
 	],
 	bootstrap: [AppComponent]
 })

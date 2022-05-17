@@ -1,10 +1,45 @@
 .privacy-container {
 	display: block;
-	margin: auto;
-	max-width: 60vw;
 	min-height: 80vh;
+}
 
-	padding: 80px 16px;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.empty-col {
+		display: none;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.empty-col {
+		display: none;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.empty-col {
+		display: inline;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.empty-col {
+		display: inline;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.empty-col {
+		display: inline;
+	}
+}
+
+.privacy-content {
+	padding-bottom: 100px;
 }
 
 .icon {

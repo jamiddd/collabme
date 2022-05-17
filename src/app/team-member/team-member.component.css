@@ -8,6 +8,7 @@
 	border-radius: 50px;
 	width: 100px;
 	height: 100px;
+	object-fit: cover;
 }
 
 .member-info {
@@ -16,8 +17,8 @@
 
 .team-member-name {
 	font-size: large;
+	font-family: "Manrope", sans-serif;
 	color: black;
-	font-weight: bold;
 	margin: 6px 0;
 	display: block;
 	line-height: 1;
