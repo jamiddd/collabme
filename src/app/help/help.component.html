@@ -1,0 +1,36 @@
+<mat-drawer-container #drawerContainer *ngIf="topPadding" class="example-container" [style.padding-top]="topPadding" autosize>
+	<mat-drawer #drawer class="example-sidenav" opened="true" [style.padding-top]="topPadding" mode="push" >
+		<mat-list class="options-list" role="list">
+			<mat-list-item matRipple role="listitem" (click)="navigateHome()">Home</mat-list-item>
+			<mat-list-item matRipple role="listitem" (click)="navigateFeatures()" >Features</mat-list-item>
+			<mat-list-item matRipple role="listitem" (click)="navigateFeatures()" >FAQs</mat-list-item>
+
+			<mat-list-item matRipple role="listitem" (click)="toggleTermsPolicyState()">Terms & policies</mat-list-item>
+			<div class="terms-condition-menu" *ngIf="isTermsPolicyOpen">
+				<mat-divider></mat-divider>
+				<mat-list class="term-policy-list">
+					<mat-list-item class="secondary-list-item" matRipple role="listitem" (click)="navigateTerms()">Terms and conditions</mat-list-item>
+					<mat-list-item class="secondary-list-item" matRipple role="listitem" (click)="navigatePrivacyPolicy()" >Privacy policy</mat-list-item>
+				</mat-list>
+				<mat-divider></mat-divider>
+			</div>
+
+		</mat-list>
+	</mat-drawer>
+
+	<div class="example-sidenav-content">
+		<mat-toolbar id="toolbar" color="primary">
+			<mat-toolbar-row>
+				<button type="button" mat-icon-button (click)="drawer.toggle()">
+					<mat-icon>menu</mat-icon>
+				</button>
+				<span style="margin: 0 12px;">{{currentTitle}}</span>
+			</mat-toolbar-row>
+		</mat-toolbar>
+
+		<div class="scroll-content" [style.height]="totalScrollableHeight">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+
+</mat-drawer-container>

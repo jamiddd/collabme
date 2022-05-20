@@ -1,0 +1,39 @@
+.register-container {
+	display: block;
+	padding: 16px;
+}
+
+.app-logo {
+	display: block;
+	margin: auto;
+}
+
+#register-header {
+	font-family: "Manrope", sans-serif;
+	text-align: center;
+	margin: 8px 0 24px 0;
+}
+
+#sign-in-btn {
+	padding: 2px;
+}
+
+.spacer {
+	flex: 1 0 auto;
+}
+
+#register-btn {
+	display: block;
+	margin: auto;
+}
+
+.field {
+	width: 100%;
+}
+
+.action-container {
+	margin-top: 24px;
+
+	display: flex;
+	flex-direction: row;
+}

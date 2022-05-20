@@ -1,0 +1,49 @@
+.example-container {
+	flex: 1 0 auto;
+}
+
+.example-spacer {
+	flex: 1 1 auto;
+}
+
+.options-list * {
+	min-width: 300px;
+	cursor: pointer;
+}
+
+.scroll-content {
+	/*overflow:scroll;*/
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.nav-drawer-header {
+	min-height: 200px;
+	background: #F1F1F1;
+
+	position: relative;
+}
+
+.nav-drawer-header-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nav-drawer-header-content h2{
+	margin: 0;
+	padding: 0;
+}
+
+.nav-drawer-header-content h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.nav-drawer-header-img {
+	border-radius: 35px;
+	width: 70px;
+	height: 70px;
+}
+
+

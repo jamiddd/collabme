@@ -1,0 +1,49 @@
+.authentication-container {
+	display: block;
+}
+
+.auth-form-container {
+	border: 1px solid lightgrey;
+	margin-top: 40px;
+	border-radius: 12px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.authentication-container {
+		padding: 20px;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.authentication-container {
+		padding: 30px;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.authentication-container {
+		padding: 70px;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.authentication-container {
+		padding-bottom: 50px;
+		padding-right: 120px;
+		padding-left: 120px;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.authentication-container {
+		padding-bottom: 50px;
+		padding-right: 180px;
+		padding-left: 180px;
+	}
+}

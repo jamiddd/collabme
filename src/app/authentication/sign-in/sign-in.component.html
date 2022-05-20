@@ -1,0 +1,28 @@
+<div class="sign-in-container">
+	<img class="app-logo" width="50" height="50" src="assets/collab_me_blue_logo_night.svg" alt="App logo">
+	<h2 id="sign-in-header">Sign in</h2>
+	<form [formGroup]="signInForm">
+		<mat-form-field appearance="fill" class="field">
+			<mat-label>Email</mat-label>
+			<input matInput placeholder="pat@example.com" formControlName="email" required>
+<!--			<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+		</mat-form-field>
+		<mat-form-field appearance="fill" class="field">
+			<mat-label>Password</mat-label>
+			<input matInput [type]="hide ? 'password' : 'text'" required>
+			<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+				<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+			</button>
+			<!--			<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+		</mat-form-field>
+		<button mat-button style="color: grey; padding: 2px;">Forgot password</button>
+
+		<p style="color: #333; margin-top: 20px;">Be sure to checkout our new help section for all your queries.</p>
+
+		<div class="action-container">
+			<button id="register-btn" mat-button color="primary" (click)="navigateToRegister()">Create account</button>
+			<span class="spacer"></span>
+			<button id="sign-in-btn" color="primary" type="submit" mat-raised-button>Sign in</button>
+		</div>
+	</form>
+</div>

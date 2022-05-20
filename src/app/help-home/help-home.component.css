@@ -1,0 +1,40 @@
+.help-home-container {
+	display: block;
+}
+
+.help-home-heading {
+	font-family: "Manrope", sans-serif;
+}
+
+.example-form {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.new-stuff-container {
+
+}
+
+.new-stuff-container h2 {
+	font-family: "Manrope", sans-serif;
+	color: grey;
+}
+
+.new-item {
+	/*margin-right: 8px;
+	margin-bottom: 8px;
+	display: inline-block;
+	padding: 4px 12px;
+	text-decoration: none;
+	color: #2962ff;*/
+}
+
+.new-item:hover {
+	/*background: #F1F1F1;*/
+}
+
+
+.example-full-width {
+	width: 100%;
+}

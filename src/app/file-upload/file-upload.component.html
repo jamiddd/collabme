@@ -1,0 +1,54 @@
+
+<ng-container>
+	<!--
+	should show dropzone only if there was no upload completed,
+	show dropzone in error mode if there are errors,
+	show hover mode on hover
+	-->
+	<div class="dropzone"
+		 *ngIf="uploadState !== SUCCESS" [class.errored]="error !== undefined"
+		 appDropZone (hovered)="toggleHover($event)"
+		 (dropped)="startUpload($event)" [class.hovering]="isHovering">
+
+
+		<div class="centered-element upload-info-container">
+
+			<!-- should show input only when there is no ongoing upload and if there are is upload already -->
+			<ng-container *ngIf="uploadState !== RUNNING && uploadState !== SUCCESS">
+				<input id="resumeInput" type="file" (change)="startUpload($any($event.target).files)" hidden >
+				<label class="file-upload-button" for="resumeInput">
+					<a mat-stroked-button>Upload resume <span class="material-symbols-rounded">upload_file</span></a>
+				</label>
+				<br>
+				<p>Only '.pdf' and '.docx' allowed</p>
+			</ng-container>
+
+			<p *ngIf="error !== undefined">{{error}}</p>
+
+			<!-- should show progress only when there is an ongoing upload -->
+			<ng-container *ngIf="uploadState === RUNNING">
+				<mat-progress-spinner
+
+					class="progress"
+
+					[diameter]="30"
+					[color]="color"
+					[mode]="mode">
+				</mat-progress-spinner>
+				<p>Uploading resume</p>
+			</ng-container>
+		</div>
+	</div>
+
+
+	<!-- should show upload success view if the upload was completed -->
+	<div class="file-uploaded-view" *ngIf="uploadState === SUCCESS" appDropZone (dropped)="startUpload($event)">
+		<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px;">
+			<p class="success-msg">
+				Uploaded resume: {{localFileName}}
+				<span class="material-symbols-rounded" style="transform: translateY(20%)">done</span>
+			</p>
+			<button mat-stroked-button (click)="resetFileUpload()">Clear</button>
+		</div>
+	</div>
+</ng-container>

@@ -1,0 +1,40 @@
+<div class="register-container row">
+	<img class="app-logo" width="50" height="50" src="assets/collab_me_blue_logo_night.svg" alt="App logo">
+	<h2 id="register-header">Create new account</h2>
+	<form [formGroup]="createAccountFormGroup">
+		<mat-form-field appearance="fill" class="field">
+			<mat-label>Name</mat-label>
+			<input matInput placeholder="John Doe" formControlName="name" required>
+<!--			<mat-error *ngIf="createAccountFormGroup.get('name').hasError('')"></mat-error>-->
+		</mat-form-field>
+		<mat-form-field appearance="fill" class="field">
+			<mat-label>Email</mat-label>
+			<input matInput placeholder="pat@example.com" formControlName="email" required>
+			<!--			<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+		</mat-form-field>
+		<mat-form-field appearance="fill" class="field">
+			<mat-label>Password</mat-label>
+			<input matInput [type]="hide ? 'password' : 'text'" required>
+			<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+				<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+			</button>
+			<!--			<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+		</mat-form-field>
+		<mat-form-field appearance="fill" class="field">
+			<mat-label>Confirm password</mat-label>
+			<input matInput [type]="confirmHide ? 'password' : 'text'" required>
+			<button mat-icon-button matSuffix (click)="confirmHide = !confirmHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="confirmHide">
+				<mat-icon>{{confirmHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+			</button>
+			<!--			<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+		</mat-form-field>
+
+		<p style="color: #333; margin-top: 20px;">Be sure to checkout our new help section for all your queries.</p>
+
+		<div class="action-container">
+			<button id="sign-in-btn" mat-button color="primary" (click)="navigateToLogin()">Sign in instead</button>
+			<span class="spacer"></span>
+			<button id="register-btn" color="primary" type="submit" mat-raised-button>Create account</button>
+		</div>
+	</form>
+</div>

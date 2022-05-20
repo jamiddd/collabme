@@ -1,0 +1,29 @@
+<div class="help-home-container row">
+	<div class="col-3 empty-col"></div>
+	<div class="col-6">
+
+		<h1 class="help-home-heading">How can we help you?</h1>
+
+		<form class="example-form">
+			<mat-form-field class="example-full-width" appearance="fill">
+				<mat-label>Write your query</mat-label>
+				<input matInput placeholder="Ex. Why there is no app?">
+				<button *ngIf="true" matSuffix mat-icon-button aria-label="Clear">
+					<mat-icon>search</mat-icon>
+				</button>
+			</mat-form-field>
+		</form>
+
+		<div class="col-12 new-stuff-container">
+			<h2>What's new</h2>
+			<ul style="list-style-type: none; padding: 0;">
+				<ng-container *ngFor="let i of newStuff">
+					<li><a href="{{i.link}}" mat-button color="primary" class="new-item">{{i.item}}</a></li>
+				</ng-container>
+			</ul>
+		</div>
+
+
+	</div>
+	<div class="col-3 empty-col"></div>
+</div>

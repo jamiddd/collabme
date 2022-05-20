@@ -1,0 +1,62 @@
+.dropzone {
+	border: 2px dotted grey;
+	background: #F1F1F1;
+	border-radius: 12px;
+	display: block;
+	min-height: 100px;
+	margin: 0 16px;
+	padding: 12px;
+
+	position: relative;
+}
+
+p {
+	font-size: x-small;
+	text-align: center;
+}
+
+.errored p {
+	color: red;
+}
+
+.errored {
+	border: 2px dotted red;
+	background: rgba(246, 170, 170, 0.33);
+	border-radius: 12px;
+}
+
+.hovering {
+	border: 2px solid dodgerblue;
+	background: rgba(81,173,255,0.33);
+	border-radius: 12px;
+}
+
+.isNotActive {
+	display: none;
+	margin: auto;
+}
+
+.isActive {
+	display: block;
+	margin: auto;
+}
+
+.file-uploaded-view {
+	border: 2px dotted rgb(17, 129, 47);
+	background: rgba(121, 234, 151, 0.33);
+	border-radius: 12px;
+	display: block;
+	min-height: 50px;
+	margin: 0 16px;
+}
+
+.success-msg {
+	color: rgb(17, 129, 47);
+}
+
+.progress {
+	display: block;
+	margin: auto;
+}
+
+
