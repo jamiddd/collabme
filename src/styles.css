@@ -172,3 +172,9 @@ a, button {
 	.col-11 {width: 91.66%;}
 	.col-12 {width: 100%;}
 }
+
+
+.text-paragraph {
+	font-size: medium;
+	font-family: "Arial", sans-serif;
+}

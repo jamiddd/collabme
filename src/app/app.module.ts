@@ -48,19 +48,35 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {UiStateService} from "./ui-state.service";
 import {HelpFeaturesComponent} from './help-features/help-features.component';
-import { HelpHomeComponent } from './help-home/help-home.component';
-import { FaqShortComponent } from './faq-short/faq-short.component';
+import {HelpHomeComponent} from './help-home/help-home.component';
+import {FaqShortComponent} from './faq-short/faq-short.component';
 import {MatTreeModule} from "@angular/material/tree";
-import { HelpFaqsComponent } from './help-faqs/help-faqs.component';
-import { BlogCardComponent } from './blog-card/blog-card.component';
-import { MaterialElevationDirectiveDirective } from './material-elevation-directive.directive';
-import { AdminComponent } from './admin/admin.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AdminAuthenticationComponent } from './admin-authentication/admin-authentication.component';
+import {HelpFaqsComponent} from './help-faqs/help-faqs.component';
+import {BlogCardComponent} from './blog-card/blog-card.component';
+import {MaterialElevationDirectiveDirective} from './material-elevation-directive.directive';
+import {AdminComponent} from './admin/admin.component';
+import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component';
+import {AuthenticationComponent} from './authentication/authentication.component';
+import {SignInComponent} from './authentication/sign-in/sign-in.component';
+import {RegisterComponent} from './authentication/register/register.component';
+import {CdkStepperModule} from "@angular/cdk/stepper";
 
 const routes: Routes = [
-	{path: "admin", component: AdminComponent, loadChildren: () => import('./admin-routing.module').then((m) => m.AdminRoutingModule)},
-	{path: "help", component: HelpComponent, loadChildren: () => import('./help-routing.module').then((m) => m.HelpRoutingModule)},
+	{
+		path: "auth",
+		component: AuthenticationComponent,
+		loadChildren: () => import('./auth-routing.module').then((m) => m.AuthRoutingModule)
+	},
+	{
+		path: "admin",
+		component: AdminComponent,
+		loadChildren: () => import('./admin-routing.module').then((m) => m.AdminRoutingModule)
+	},
+	{
+		path: "help",
+		component: HelpComponent,
+		loadChildren: () => import('./help-routing.module').then((m) => m.HelpRoutingModule)
+	},
 	{path: "blogs", component: BlogsComponent},
 	{path: "career", component: CareerComponent},
 	{path: "career/:id", component: JobComponent},
@@ -92,14 +108,16 @@ const routes: Routes = [
 		HelpComponent,
 		PageNotFoundComponent,
 		HelpFeaturesComponent,
-  HelpHomeComponent,
-  FaqShortComponent,
-  HelpFaqsComponent,
-  BlogCardComponent,
-  MaterialElevationDirectiveDirective,
-  AdminComponent,
-  AdminDashboardComponent,
-  AdminAuthenticationComponent
+		HelpHomeComponent,
+		FaqShortComponent,
+		HelpFaqsComponent,
+		BlogCardComponent,
+		MaterialElevationDirectiveDirective,
+		AdminComponent,
+		AdminDashboardComponent,
+		AuthenticationComponent,
+		SignInComponent,
+		RegisterComponent
 	],
 	imports: [
 		BrowserModule,
@@ -132,7 +150,8 @@ const routes: Routes = [
 		MatRippleModule,
 		MatSidenavModule,
 		MatListModule,
-		MatTreeModule
+		MatTreeModule,
+		CdkStepperModule
 	],
 	providers: [
 		ScreenTrackingService, UserTrackingService, UiStateService

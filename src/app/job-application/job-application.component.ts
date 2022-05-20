@@ -50,7 +50,7 @@ export class JobApplicationComponent implements OnInit {
 				phone: new FormControl("", [Validators.required, Validators.maxLength(10), Validators.pattern("^[0-9]{10}$")]),
 				address: new FormControl("", [Validators.required, Validators.maxLength(100)])
 			}
-		)
+		);
 
 		this.secondFormGroup = new FormGroup(
 			{

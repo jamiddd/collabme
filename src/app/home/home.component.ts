@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
 		name: "Luna Barua",
 		image: "/assets/team1.jpeg",
 		about: "",
-		position: "Marketing & Design"
+		position: "Design & Marketing"
 	}
 
 	teamMember2: TeamMember = {
