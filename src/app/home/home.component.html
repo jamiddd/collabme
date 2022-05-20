@@ -58,9 +58,9 @@
 						problems from around the world. Starting through this app.
 					</p>
 				</div>
-				<div class="team-members-container col-8">
+				<div class="team-members-container col-8 row">
 					<ng-container *ngFor="let m of teamMembers">
-						<app-team-member [teamMember]="m"></app-team-member>
+						<app-team-member [teamMember]="m" class="col-6"></app-team-member>
 					</ng-container>
 				</div>
 			</div>
