@@ -37,4 +37,11 @@ export class NavigationComponent implements OnInit, AfterViewInit {
 		}
 	}
 
+	onResize(event: any) {
+		if (this.el !== undefined) {
+			const totalOffset = this.el.nativeElement.offsetHeight
+			this.uiStateService.setPrimaryNavOffset(totalOffset)
+		}
+	}
+
 }

@@ -85,9 +85,11 @@ export class HomeComponent implements OnInit {
 	]
 
 
-	topPadding?: number
+	/*topPadding?: number
 	topPaddingText?: string
-
+	coverHeight?: number
+	coverHeightText?: string
+*/
 
 	constructor(
 		breakPointObserver: BreakpointObserver,
@@ -109,10 +111,15 @@ export class HomeComponent implements OnInit {
 				}
 			});
 
-		uiStateService.primaryNavOffset.subscribe((n) => {
+		/*uiStateService.primaryNavOffset.subscribe((n) => {
 			this.topPadding = n;
 			this.topPaddingText = n + "px";
-		})
+
+			this.coverHeight = window.innerHeight - this.topPadding;
+			this.coverHeightText = this.coverHeight + "px";
+
+			console.log("Top padding is : " + this.topPaddingText);
+		})*/
 
 	}
 

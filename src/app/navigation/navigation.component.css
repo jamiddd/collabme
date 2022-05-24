@@ -2,7 +2,6 @@
 	position: fixed;
 	top:0;
 
-	min-height: 56px;
 	z-index: 999;
 	background: white;
 
@@ -14,10 +13,11 @@
 	background: #c8dcef;
 	text-align: center;
 	color: #000000;
-	font-family: "Manrope", sans-serif;
+	font-family: "Arial", sans-serif;
 	display: block;
+	font-size: 16px;
 	margin: 0;
-	padding: 4px 12px;
+	padding: 8px 12px;
 }
 
 .center-contained {
@@ -25,7 +25,8 @@
 }
 
 .nav-center {
-	/* for child elements*/
+	/* for child elements */
+
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -57,13 +58,6 @@
 	height: inherit;
 }
 
-
-.nav-logo {
-	/*transform: translateY(10%);*/
-	width: 56px;
-	height: 56px;
-}
-
 .mobile-nav-logo {
 	width: 48px;
 	height: 48px;
@@ -75,12 +69,67 @@
 }
 
 .nav-logo-text {
-	font-size: large;
 	font-family: "Manrope", sans-serif;
 	font-weight: 700;
 	padding: 8px;
 	text-decoration: none;
 	color: black;
+}
+
+.nav-logo {
+	display: block;
+	margin: auto;
+}
+
+.nav-left {
+	display: flex;
+	flex-direction: row;
+}
+
+.nav-right {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.nav-logo {
+		width: 56px;
+		height: 56px;
+	}
+
+	.nav-logo-text {
+		font-size: large;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.nav-logo {
+		width: 70px;
+		height: 70px;
+	}
+
+	.nav-logo-text {
+		font-family: "Manrope", sans-serif;
+		font-size: xx-large;
+		font-weight: 700;
+	}
 }
 
 

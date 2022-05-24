@@ -35,7 +35,7 @@ export class AppComponent implements AfterViewInit {
 	/* navigations */
 	navigation: Navigation = {
 		title: "CollabMe",
-		logo: "/assets/collab_me_blue_logo_night.svg",
+		logo: "/assets/logo_with_text.svg",
 		home: "/",
 		items: [],
 		routes: [],

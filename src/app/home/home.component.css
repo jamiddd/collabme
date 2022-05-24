@@ -7,25 +7,22 @@ section {
 @media only screen and (max-width: 600px) {
 
 	.cover-content {
-		padding: 40px 0;
+
 	}
 
 	.cover-text {
 		text-align: center;
-		font-size: 72px;
+		font-size: xxx-large;
 		line-height: 1;
 	}
 
 	.cover-text-secondary {
 		text-align: center;
-		font-size: large;
+		font-size: x-large;
 		padding: 0 12px;
 	}
 
-	.cover-img {
-		max-width: 100%;
-		filter: drop-shadow(10px 10px 4px #CCCCCC);
-	}
+
 
 	.empty-col {
 		display: none;
@@ -45,7 +42,6 @@ section {
 @media only screen and (min-width: 600px) {
 
 	.cover-content {
-		padding: 60px 0;
 	}
 
 	.cover-text {
@@ -60,10 +56,6 @@ section {
 		padding: 0 12px;
 	}
 
-	.cover-img {
-		max-width: 70%;
-		filter: drop-shadow(10px 10px 4px #CCCCCC);
-	}
 
 	.empty-col {
 		display: none;
@@ -92,10 +84,6 @@ section {
 		font-size: large;
 	}
 
-	.cover-img {
-		max-width: 100%;
-		filter: drop-shadow(10px 10px 4px #CCCCCC);
-	}
 
 	.empty-col {
 		display: inline;
@@ -111,8 +99,11 @@ section {
 }
 
 .cover-img {
-	display: block;
-	margin: auto;
+	/*display: block;
+	margin: auto;*/
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -128,10 +119,6 @@ section {
 		font-size: large;
 	}
 
-	.cover-img {
-		max-width: 90%;
-		filter: drop-shadow(10px 10px 4px #CCCCCC);
-	}
 
 	.empty-col {
 		display: inline;
@@ -161,10 +148,6 @@ section {
 		font-size: x-large;
 	}
 
-	.cover-img {
-		max-width: 85%;
-		filter: drop-shadow(10px 10px 4px #CCCCCC);
-	}
 
 	.empty-col {
 		display: inline;
@@ -183,10 +166,19 @@ section {
 .cover-text {
 	font-family: "Koulen", sans-serif;
 	padding: 20px 10px;
+	color: white;
+}
+
+.download-btn {
+	color: white;
+	border: 2px solid white;
+	max-width: 200px;
+	margin: 12px;
 }
 
 .cover-text-secondary {
 	font-family: "Arial", sans-serif;
+	color: white;
 }
 
 .features-container {
@@ -214,28 +206,61 @@ section {
 }
 
 #cover {
-	min-height: 100vh;
-	background-size: cover;
-	background: url("../../assets/cover-bg.jpg") no-repeat;
+	height: 100vh;
+	/*min-height: 100vh;
+	background-size: cover;*/
 }
 
 /*#cover * {
 	border: 1px solid red;
 }*/
 
-.cover-content {
-	min-height: 100vh;
+#myVideo {
+	width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
 
-	/* for child elements */
+#coverScrim {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.47);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.cover-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
 	align-items: center;
+	justify-content: center;
+}
+
+.cover-content {
+
+	height: 100%;
+	width: 100%;
+
+	/* for child elements */
+/*	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;*/
+	position: relative;
 }
 
 
 .cover-content-text {
 	padding: 40px 1vw;
+	z-index: 10;
 
 	/* for child elements */
 	display: flex;
@@ -244,7 +269,7 @@ section {
 }
 
 .cover-content-media {
-
+	height: 100%;
 }
 
 .cover-text-focused {
@@ -288,12 +313,8 @@ section {
 	text-align: center;
 }
 
-.about-team {
-
-}
-
 .company-description {
-
+	font-size: large;
 }
 
 .our-team-header {
@@ -302,7 +323,7 @@ section {
 }
 
 .about-desc {
-
+	font-size: large;
 }
 
 .team-description-container {

@@ -14,6 +14,7 @@ body {
 
 * {
 	box-sizing: border-box;
+	/*border: 1px solid red;*/
 }
 
 app-root {
@@ -174,7 +175,7 @@ a, button {
 }
 
 
-.text-paragraph {
-	font-size: medium;
-	font-family: "Arial", sans-serif;
+p {
+	font-family: "Manrope", sans-serif;
+	color: #818181;
 }
